@@ -35,7 +35,7 @@
                                 data-width="100%"
                                 data-height="500"
                                 data-arrows="false"
-                                data-click="true"
+                                data-click="false"
                                 data-swipe="true"
                                 data-fit="cover"
                                 data-thumbwidth="200"
@@ -78,7 +78,7 @@
                         <div class="choose-flavor-container mb-3">
                             <div class="choose-flavor-title mb-3">CHOOSE YOUR FLAVOR <span class="fw-bold">Strawberry Passion</span></div>
                             <div class="choose-flavor-wrapper d-flex align-items-start">
-                                <div class="choose-flavor choose-flavor-one">
+                                <div class="choose-flavor choose-flavor-one active">
                                     <img src="https://placehold.co/400x600" alt="product one">
                                 </div>
                                 <div class="choose-flavor choose-flavor-two">
@@ -95,8 +95,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="purchase-details">
-                            <input type="radio" name="purchase-selection" id="purchaseRadioOne" class="purchase-radio d-none">
+                        <div class="purchase-details mb-3">
+                            <input type="radio" name="purchase-selection" id="purchaseRadioOne" class="purchase-radio d-none" checked>
                             <label for="purchaseRadioOne" class="purchase-label d-flex align-items-center mb-3">
                                 <div class="purchase-label-circle me-3"></div>
                                 <div class="purchase-label-content d-flex align-items-center justify-content-between w-100">
@@ -106,41 +106,104 @@
                             </label>
 
                             <input type="radio" name="purchase-selection" id="purchaseRadioTwo" class="purchase-radio d-none">
-                            <label for="purchaseRadioTwo" class="purchase-label d-flex align-items-center">
-                                <div class="purchase-label-circle me-3"></div>
-                                <div class="purchase-label-content d-flex align-items-center justify-content-between w-100">
-                                    <h3 class="purchase-label-content-title mb-0">Subscribe & Save <span class="item-qty">12 Pack</span></h3>
-                                    <p class="mt-1 mb-0 fw-bold"><span class="fw-normal text-decoration-line-through me-2">$42.00</span>$35.70</p>
+                            <label for="purchaseRadioTwo" class="purchase-label w-100">
+                                <div class="d-flex align-items-center mb-3 w-100">
+                                    <div class="purchase-label-circle me-3"></div>
+                                    <div class="purchase-label-content d-flex align-items-center justify-content-between w-100">
+                                        <h3 class="purchase-label-content-title mb-0">Subscribe & Save <span class="item-qty">12 Pack</span></h3>
+                                        <p class="mt-1 mb-0 fw-bold"><span class="fw-normal text-decoration-line-through me-2">$42.00</span>$35.70</p>
+                                    </div>
                                 </div>
+                                <select id="discountDD" class="w-100 px-1 py-2 bg-transparent">
+                                    <option value="Delivery every 4 weeks - 15% off">Delivery every 4 weeks - 15% off</option>
+                                    <option value="Delivery every 8 weeks - 15% off">Delivery every 8 weeks - 15% off</option>
+                                    <option value="Delivery every 12 weeks - 15% off">Delivery every 12 weeks - 15% off</option>
+                                    <option value="Delivery every 2 weeks - 15% off">Delivery every 2 weeks - 15% off</option>
+                                </select>
                             </label>
                         </div>
-                        <div class="cart-details">
+                        <div class="cart-details fw-bold mb-4">
                             <div class="d-flex align-items-center">
-                                <div class="qty-count-container">
+                                <div class="qty-count-container d-flex align-items-center me-3">
                                     <button>-</button>
                                     <span>1</span>
                                     <button>+</button>
                                 </div>
-                                <button>Add To Cart</button>
+                                <button id="addToCartBtn">Add To Cart</button>
                             </div>
-                            <p class="cart-info">Order 2+ for Free Shipping!</p>
+                            <!-- <p class="cart-info">Order 2+ for Free Shipping!</p> -->
                         </div>
 
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs custom-tabs border-0" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">BENEFITS</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">INGREDIENTS</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">NUTRITION FACTS</button>
                             </li>
                         </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                        <div class="tab-content custom-tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active py-4" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="benifit-box-row d-flex justify-content-between mb-4">
+                                    <div class="benifit-box">
+                                        <div class="benifit-img mb-2"><img src="https://placehold.co/400x400" alt="benifit img 1"></div>
+                                        <div class="benifit-text text-center">CERTIFIED ORGANIC</div>
+                                    </div>
+
+                                    <div class="benifit-box">
+                                        <div class="benifit-img mb-2"><img src="https://placehold.co/400x400" alt="benifit img 1"></div>
+                                        <div class="benifit-text text-center">CERTIFIED ORGANIC</div>
+                                    </div>
+
+                                    <div class="benifit-box">
+                                        <div class="benifit-img mb-2"><img src="https://placehold.co/400x400" alt="benifit img 1"></div>
+                                        <div class="benifit-text text-center">CERTIFIED ORGANIC</div>
+                                    </div>
+                                </div>
+                                <div class="benifit-box-row d-flex justify-content-between">
+                                    <div class="benifit-box">
+                                        <div class="benifit-img mb-2"><img src="https://placehold.co/400x400" alt="benifit img 1"></div>
+                                        <div class="benifit-text text-center">CERTIFIED ORGANIC</div>
+                                    </div>
+
+                                    <div class="benifit-box">
+                                        <div class="benifit-img mb-2"><img src="https://placehold.co/400x400" alt="benifit img 1"></div>
+                                        <div class="benifit-text text-center">CERTIFIED ORGANIC</div>
+                                    </div>
+
+                                    <div class="benifit-box">
+                                        <div class="benifit-img mb-2"><img src="https://placehold.co/400x400" alt="benifit img 1"></div>
+                                        <div class="benifit-text text-center">CERTIFIED ORGANIC</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade py-4 px-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <h4 class="mb-4 fw-bold">Mango Gold</h4>
+                                <p class="mb-0">Fresh Brewed Turmeric* (Filtered Water, Turmeric Root*), Mango Puree*, Passion Fruit Juice*, Agave Nectar*, Jerusalem Artichoke*, Chicory Root Inulin, Mango Flavor*, Monk Fruit Extract*, Live Probiotics (Bacillus subtilis), Black Pepper* (*organic)</p>
+                            </div>
+                            <div class="tab-pane fade py-4 px-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <ul class="neutrants-list-container">
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span>Serving Size</span>
+                                        <span>1 can</span>
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span>Serving Size</span>
+                                        <span>1 can</span>
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span>Serving Size</span>
+                                        <span>1 can</span>
+                                    </li>
+                                    <li class="d-flex align-items-center justify-content-between">
+                                        <span>Serving Size</span>
+                                        <span>1 can</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                     </div>
