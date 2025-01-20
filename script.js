@@ -123,6 +123,7 @@ $(function() {
 
     const dataIntegration = (data) => {
         $(".product-title").text(data.name)
+        $(".choose-flavor-title > span").text(data.name)
         $(".product-description span:nth-child(1)").text(data.descriptionCount)
         $(".product-description span:nth-child(2)").text(data.description)
         $(".product-details").text(data.details)
