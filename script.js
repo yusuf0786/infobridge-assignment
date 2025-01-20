@@ -1,5 +1,7 @@
 $(function() {
 
+    let cartCuantity = 1
+
     const flavorData = [
         {
             "name": "Strawberry Passion",
@@ -155,7 +157,6 @@ $(function() {
         fotoramaSlideActiveFunc (e, fotoramaData)
     });
     function fotoramaSlideActiveFunc(e, fotoramaData) {
-        console.log(fotoramaData);
 
         setTimeout(() => {
             // Ensure that fotoramaData.$active is defined
@@ -176,7 +177,17 @@ $(function() {
                });
            }
         }, 100);
-
     }
+
+    // cart quantuty add/less JS
+    $(".qty-count-container > span").text(cartCuantity)
+    $(".qty-count-container button:nth-child(1)").on('click', function(){
+        cartCuantity--;
+        $(".qty-count-container > span").text(cartCuantity)
+    })
+    $(".qty-count-container button:nth-child(3)").on('click', function(){
+        cartCuantity++;
+        $(".qty-count-container > span").text(cartCuantity)
+    })
 
 })
